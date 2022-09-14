@@ -3,7 +3,7 @@
 #include "State.h"
 #include "Context.h"
 using namespace HsmState;
-// 对象工厂
+//瀵硅薄宸ュ巶
 class Factory
 {
 public:
