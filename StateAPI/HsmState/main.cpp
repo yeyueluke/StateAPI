@@ -11,17 +11,20 @@ int main()
 {
 	Context* context = new Context();
 
-	// 创建状态机
+	// 鍒涘缓鐘舵�佹満
 	Factory::CreateState(context, "StartState");
 	Factory::CreateState(context, "HungerState");
-	Factory::CreateState(context, "Dinner");
-	Factory::CreateState(context, "DoTheCookingState", "Dinner");
-	Factory::CreateState(context, "EatState", "Dinner");
+	//Factory::CreateState(context, "Dinner");
+	//Factory::CreateState(context, "DoTheCookingState", "Dinner");
+	//Factory::CreateState(context, "EatState", "Dinner");
+	Factory::CreateState(context, "DoTheCookingState");
+	Factory::CreateState(context, "EatState");
+	
 	Factory::CreateState(context, "SleepState");
 	Factory::CreateState(context, "WorkState");
 	Factory::CreateState(context, "LoafOnAJob");
 
-	// 开始状态机
+	// 寮�濮嬬姸鎬佹満
 	context->Start("StartState");
 
 	int time = 0;
@@ -33,7 +36,7 @@ int main()
 
 		context->Update();
 
-		// 如果为工作状态，每隔60分钟发出偷懒事件
+		// 濡傛灉涓哄伐浣滅姸鎬侊紝姣忛殧60鍒嗛挓鍙戝嚭鍋锋噿浜嬩欢
 		if (context->GetCurStateName() == "WorkState" 
 			&& time % 60 == 0) 
 		{
