@@ -3,7 +3,7 @@
 
 namespace HsmState
 {
-	// 设置时间响应回调函数
+	// 璁剧疆鏃堕棿鍝嶅簲鍥炶皟鍑芥暟
 	void State::set_event_func(std::function<EventDeal(EventData&)> func)
 	{
 		_event_func = func;
