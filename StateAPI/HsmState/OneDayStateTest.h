@@ -10,10 +10,10 @@ bool run = true;
 
 enum EventS
 {
-	belazy = 0, // ÍµÀÁÊÂ¼ş
+	belazy = 0, // å·æ‡’äº‹ä»¶
 };
 
-// ¿ªÊ¼×´Ì¬
+// å¼€å§‹çŠ¶æ€
 class StartState : public State
 {
 public:
@@ -39,7 +39,7 @@ public:
 	int time = 0;
 };
 
-// ¼¢¶ö×´Ì¬
+// é¥¥é¥¿çŠ¶æ€
 class HungerState : public State
 {
 public:
@@ -58,7 +58,8 @@ public:
 		time++;
 		if (time == 10)
 		{
-			TransState("Dinner");
+			// TransState("Dinner");
+			TransState("DoTheCookingState");
 		}
 	}
 
@@ -84,7 +85,7 @@ public:
 	}
 };
 
-// ×ö·¹×´Ì¬
+// åšé¥­çŠ¶æ€
 class DoTheCookingState : public State
 {
 public:
@@ -111,7 +112,7 @@ public:
 };
 
 
-// ³Ô·¹×´Ì¬
+// åƒé¥­çŠ¶æ€
 class EatState : public State
 {
 public:
@@ -138,7 +139,7 @@ public:
 };
 
 
-// ·¹ºóË¯¾õ×´Ì¬
+// é¥­åç¡è§‰çŠ¶æ€
 class SleepState : public State
 {
 public:
@@ -164,7 +165,7 @@ public:
 	int time = 0;
 };
 
-// ¹¤×÷×´Ì¬
+// å·¥ä½œçŠ¶æ€
 class WorkState : public State
 {
 public:
@@ -206,7 +207,7 @@ public:
 	int time = 0;
 };
 
-// ¹¤×÷ÃşÓã×´Ì¬
+// å·¥ä½œæ‘¸é±¼çŠ¶æ€
 class LoafOnAJob : public State
 {
 public:
